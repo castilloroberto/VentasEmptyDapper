@@ -8,10 +8,10 @@ namespace VentasEmptyDapper.Controller
     {
 
 
-        public bool InsertDetalles
-        {
+        //public bool InsertDetalles
+        //{
 
-        }
+        //}
 
 
     }

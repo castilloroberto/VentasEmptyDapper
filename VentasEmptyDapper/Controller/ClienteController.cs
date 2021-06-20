@@ -14,12 +14,12 @@ namespace VentasEmptyDapper.Controller
             return db.Get<Cliente>(DNI);
 
         }
-        public bool InsertCliente(Cliente cliente)
+        private bool InsertCliente(Cliente cliente)
         {
             var db = Connection;
             return db.Insert<Cliente>(cliente) > 1;
         }
-        public bool UpdateCliente(Cliente cliente)
+        private bool UpdateCliente(Cliente cliente)
         {
             var db = Connection;
             return db.Update<Cliente>(cliente);

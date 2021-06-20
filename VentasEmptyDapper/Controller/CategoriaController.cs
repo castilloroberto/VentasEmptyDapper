@@ -6,14 +6,16 @@ using VentasEmptyDapper.Models;
 
 namespace VentasEmptyDapper.Controller
 {
-    public class ColaboradorController : ConnectionController
+    public class CategoriaController : ConnectionController
     {
-        public Colaboradores GetColaborador(string DNI)
+
+        public IEnumerable<Categorias> GetCategorias()
         {
             using (var db = Connection)
             {
-                return db.Get<Colaboradores>(DNI);
+                return db.GetAll<Categorias>();
             }
         }
+
     }
 }

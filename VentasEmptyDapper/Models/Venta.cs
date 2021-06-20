@@ -9,17 +9,26 @@ namespace VentasEmptyDapper.Models
     public class Venta
     {
         [ExplicitKey]
-        public Guid Id { get; set; }
+        public Guid ID { get; set; }
         
-        public string IdCliente { get; set; }
-        
-        public string IdColaborador { get; set; }
-        public string TipoVenta { get; set; }
-
-        
+        // no se escribe ni se actauliza es generado por la base de datos
         [Write(false)]
         [Computed]
-        public DateTime Fecha { get; set; }
+        public int CodigoFactura { get; set; }
+        public string IDCliente { get; set; }
+        
+        public string IDColaborador { get; set; }
+        public int IDTipoVenta { get; set; }
+
+        public float Prima { get; set; }
+
+        public int Cuotas { get; set; }
+
+        [Write(false)]
+        [Computed]
+        public DateTime FechaInicio { get; set; }
+
+        public DateTime FechaFin { get; set; }
 
         [Write(false)]
         [Computed]
@@ -35,11 +44,17 @@ namespace VentasEmptyDapper.Models
         
         [Write(false)]
         [Computed]
-        public Colaborador Colaborador { get; set; }
+        public Colaboradores Colaborador { get; set; }
 
         [Write(false)]
         [Computed]
         public IEnumerable<DetalleVenta> DetallesVenta { get; set; }
+
+
+        public Venta()
+        {
+            // inicializar valores nulos
+        }
 
 
     }
