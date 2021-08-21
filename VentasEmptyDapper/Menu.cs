@@ -28,8 +28,11 @@ namespace MasterDetailDapper
             botones.Add(btn_inventario);
             botones.Add(btn_ventasContado);
             botones.Add(btn_ventasCredito);
-           
-           
+            Seleccionar(btn_ventasContado);
+            VentaAlContadoView ventaAlContadoView = new VentaAlContadoView();
+            mainPanel.Controls.Add(ventaAlContadoView);
+
+
         }
        
         private void ResetButtons()
@@ -44,7 +47,6 @@ namespace MasterDetailDapper
         {
             Seleccionar(btn_ventasContado);
             VentaAlContadoView ventaAlContadoView = new VentaAlContadoView();
-            mainPanel.Controls.Clear();
             mainPanel.Controls.Add(ventaAlContadoView);
         }
 
@@ -58,7 +60,6 @@ namespace MasterDetailDapper
         {
             Seleccionar(btn_inventario);
             InvetarioView cs = new InvetarioView();
-            mainPanel.Controls.Clear();
             mainPanel.Controls.Add(cs);
 
         }
@@ -74,6 +75,8 @@ namespace MasterDetailDapper
             ResetButtons();
             btn.BackColor = Color.FromName("dodgerblue");
             btn.ForeColor = Color.FromName("white");
-        } 
+            mainPanel.Controls.Clear();
+
+        }
     }
 }

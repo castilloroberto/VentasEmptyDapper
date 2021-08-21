@@ -30,40 +30,33 @@ namespace VentasEmptyDapper.Views
         private void InitializeComponent()
         {
             this.dgv_productos = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_insertar = new System.Windows.Forms.Button();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.existencias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_productos
             // 
+            this.dgv_productos.AllowUserToAddRows = false;
+            this.dgv_productos.AllowUserToDeleteRows = false;
             this.dgv_productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_productos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.producto});
+            this.codigo,
+            this.producto,
+            this.precio,
+            this.existencias});
             this.dgv_productos.Location = new System.Drawing.Point(200, 170);
             this.dgv_productos.Name = "dgv_productos";
+            this.dgv_productos.ReadOnly = true;
             this.dgv_productos.RowHeadersWidth = 51;
             this.dgv_productos.RowTemplate.Height = 29;
             this.dgv_productos.Size = new System.Drawing.Size(877, 382);
             this.dgv_productos.TabIndex = 0;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "ID";
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 125;
-            // 
-            // producto
-            // 
-            this.producto.DataPropertyName = "Producto";
-            this.producto.HeaderText = "Producto";
-            this.producto.MinimumWidth = 6;
-            this.producto.Name = "producto";
-            this.producto.Width = 125;
             // 
             // btn_insertar
             // 
@@ -74,6 +67,51 @@ namespace VentasEmptyDapper.Views
             this.btn_insertar.Text = "Insertar";
             this.btn_insertar.UseVisualStyleBackColor = true;
             this.btn_insertar.Click += new System.EventHandler(this.btn_insertar_Click);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "ID";
+            this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 125;
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "Codigo";
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.MinimumWidth = 6;
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Width = 125;
+            // 
+            // producto
+            // 
+            this.producto.DataPropertyName = "Producto";
+            this.producto.HeaderText = "Producto";
+            this.producto.MinimumWidth = 6;
+            this.producto.Name = "producto";
+            this.producto.ReadOnly = true;
+            this.producto.Width = 125;
+            // 
+            // precio
+            // 
+            this.precio.DataPropertyName = "PrecioUnitario";
+            this.precio.HeaderText = "Precio";
+            this.precio.MinimumWidth = 6;
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            this.precio.Width = 125;
+            // 
+            // existencias
+            // 
+            this.existencias.DataPropertyName = "Existencias";
+            this.existencias.HeaderText = "Existencias";
+            this.existencias.MinimumWidth = 6;
+            this.existencias.Name = "existencias";
+            this.existencias.ReadOnly = true;
+            this.existencias.Width = 125;
             // 
             // InvetarioView
             // 
@@ -91,8 +129,11 @@ namespace VentasEmptyDapper.Views
         #endregion
 
         private System.Windows.Forms.DataGridView dgv_productos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn producto;
         private System.Windows.Forms.Button btn_insertar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn existencias;
     }
 }

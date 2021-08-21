@@ -30,7 +30,12 @@ namespace MasterDetailDapper
         private void InitializeComponent()
         {
             this.menuPanel = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.btn_colaboradores = new System.Windows.Forms.Button();
             this.btn_inventario = new System.Windows.Forms.Button();
             this.btn_ventasCredito = new System.Windows.Forms.Button();
@@ -39,6 +44,7 @@ namespace MasterDetailDapper
             this.logo = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.menuPanel.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -46,17 +52,44 @@ namespace MasterDetailDapper
             // menuPanel
             // 
             this.menuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.menuPanel.Controls.Add(this.panel3);
             this.menuPanel.Controls.Add(this.panel2);
             this.menuPanel.Controls.Add(this.panel1);
             this.menuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuPanel.Location = new System.Drawing.Point(0, 0);
             this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(250, 763);
+            this.menuPanel.Size = new System.Drawing.Size(250, 895);
             this.menuPanel.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 770);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(250, 125);
+            this.panel3.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Crimson;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(0, 34);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(250, 58);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Cerrar Sesion";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
             this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.btn_colaboradores);
             this.panel2.Controls.Add(this.btn_inventario);
             this.panel2.Controls.Add(this.btn_ventasCredito);
@@ -64,8 +97,47 @@ namespace MasterDetailDapper
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 186);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(250, 577);
+            this.panel2.Size = new System.Drawing.Size(250, 709);
             this.panel2.TabIndex = 2;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.Control;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button4.Location = new System.Drawing.Point(0, 396);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(250, 58);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Colaboradores";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.Control;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button3.Location = new System.Drawing.Point(3, 497);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(250, 58);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Colaboradores";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(3, 298);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(250, 58);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Colaboradores";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // btn_colaboradores
             // 
@@ -73,7 +145,7 @@ namespace MasterDetailDapper
             this.btn_colaboradores.FlatAppearance.BorderSize = 0;
             this.btn_colaboradores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_colaboradores.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_colaboradores.Location = new System.Drawing.Point(0, 192);
+            this.btn_colaboradores.Location = new System.Drawing.Point(3, 222);
             this.btn_colaboradores.Name = "btn_colaboradores";
             this.btn_colaboradores.Size = new System.Drawing.Size(250, 58);
             this.btn_colaboradores.TabIndex = 0;
@@ -87,7 +159,7 @@ namespace MasterDetailDapper
             this.btn_inventario.FlatAppearance.BorderSize = 0;
             this.btn_inventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_inventario.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_inventario.Location = new System.Drawing.Point(0, 128);
+            this.btn_inventario.Location = new System.Drawing.Point(0, 146);
             this.btn_inventario.Name = "btn_inventario";
             this.btn_inventario.Size = new System.Drawing.Size(250, 58);
             this.btn_inventario.TabIndex = 0;
@@ -101,7 +173,7 @@ namespace MasterDetailDapper
             this.btn_ventasCredito.FlatAppearance.BorderSize = 0;
             this.btn_ventasCredito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ventasCredito.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_ventasCredito.Location = new System.Drawing.Point(0, 64);
+            this.btn_ventasCredito.Location = new System.Drawing.Point(0, 73);
             this.btn_ventasCredito.Name = "btn_ventasCredito";
             this.btn_ventasCredito.Size = new System.Drawing.Size(250, 58);
             this.btn_ventasCredito.TabIndex = 0;
@@ -149,19 +221,21 @@ namespace MasterDetailDapper
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(250, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1502, 763);
+            this.mainPanel.Size = new System.Drawing.Size(1502, 895);
             this.mainPanel.TabIndex = 1;
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1752, 763);
+            this.ClientSize = new System.Drawing.Size(1752, 895);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.menuPanel);
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.menuPanel.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -180,6 +254,11 @@ namespace MasterDetailDapper
         private System.Windows.Forms.Button btn_colaboradores;
         private System.Windows.Forms.Button btn_inventario;
         private System.Windows.Forms.Button btn_ventasCredito;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
     }
 }
 

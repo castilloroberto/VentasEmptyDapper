@@ -13,10 +13,17 @@ namespace VentasEmptyDapper.Views
     public partial class VentaAlContadoView : UserControl
     {
         ColaboradorController colaboradorController = new ColaboradorController();
+        ProductoController productoController = new ProductoController();
 
         public VentaAlContadoView()
         {
             InitializeComponent();
+            CargarDatos();
+        }
+        private void CargarDatos()
+        {
+            dgv_productos.DataSource = productoController.GetProductos();
+
         }
         private void txt_dniColaborador_KeyUp(object sender, KeyEventArgs e)
         {
@@ -42,14 +49,14 @@ namespace VentasEmptyDapper.Views
 
         private void dgv_productos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txt_precio.Text = GetDgvCell(2);
+            txt_precio.Text = GetDgvCell(3);
 
         }
 
-        private string GetDgvCell(int i)
+        private string GetDgvCell(int i = 0)
         {
 
-            throw new NotImplementedException();
+            return dgv_productos.Rows[dgv_productos.CurrentRow.Index].Cells[i].Value.ToString();
         }
     }
 }

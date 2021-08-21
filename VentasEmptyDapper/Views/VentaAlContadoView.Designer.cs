@@ -31,7 +31,6 @@ namespace VentasEmptyDapper.Views
         {
             this.btn_terminarVenta = new System.Windows.Forms.Button();
             this.btn_agregarProducto = new System.Windows.Forms.Button();
-            this.cb_tipoventa = new System.Windows.Forms.ComboBox();
             this.txt_telefono = new System.Windows.Forms.TextBox();
             this.txt_nombreCliente = new System.Windows.Forms.TextBox();
             this.txt_precio = new System.Windows.Forms.TextBox();
@@ -39,7 +38,6 @@ namespace VentasEmptyDapper.Views
             this.txt_buscarProducto = new System.Windows.Forms.TextBox();
             this.txt_dniCliente = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -56,6 +54,7 @@ namespace VentasEmptyDapper.Views
             this.lb_productosVenta = new System.Windows.Forms.ListBox();
             this.dgv_productos = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.existencias = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,18 +88,6 @@ namespace VentasEmptyDapper.Views
             this.btn_agregarProducto.TabIndex = 30;
             this.btn_agregarProducto.Text = "Agregar a la Venta";
             this.btn_agregarProducto.UseVisualStyleBackColor = false;
-            // 
-            // cb_tipoventa
-            // 
-            this.cb_tipoventa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.cb_tipoventa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_tipoventa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb_tipoventa.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cb_tipoventa.FormattingEnabled = true;
-            this.cb_tipoventa.Location = new System.Drawing.Point(650, 229);
-            this.cb_tipoventa.Name = "cb_tipoventa";
-            this.cb_tipoventa.Size = new System.Drawing.Size(223, 36);
-            this.cb_tipoventa.TabIndex = 29;
             // 
             // txt_telefono
             // 
@@ -169,16 +156,6 @@ namespace VentasEmptyDapper.Views
             this.label9.Size = new System.Drawing.Size(146, 28);
             this.label9.TabIndex = 20;
             this.label9.Text = "Precio Producto";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(650, 198);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 28);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Tipo Venta";
             // 
             // label1
             // 
@@ -334,25 +311,35 @@ namespace VentasEmptyDapper.Views
             this.dgv_productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_productos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
+            this.codigo,
             this.producto,
             this.precio,
             this.existencias});
-            this.dgv_productos.Location = new System.Drawing.Point(19, 288);
+            this.dgv_productos.Location = new System.Drawing.Point(20, 270);
             this.dgv_productos.Name = "dgv_productos";
             this.dgv_productos.ReadOnly = true;
             this.dgv_productos.RowHeadersWidth = 51;
             this.dgv_productos.RowTemplate.Height = 29;
-            this.dgv_productos.Size = new System.Drawing.Size(857, 365);
-            this.dgv_productos.TabIndex = 6;
+            this.dgv_productos.Size = new System.Drawing.Size(877, 382);
+            this.dgv_productos.TabIndex = 32;
             // 
             // id
             // 
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "Id";
+            this.id.DataPropertyName = "ID";
+            this.id.HeaderText = "ID";
             this.id.MinimumWidth = 6;
             this.id.Name = "id";
             this.id.ReadOnly = true;
             this.id.Width = 125;
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "Codigo";
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.MinimumWidth = 6;
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Width = 125;
             // 
             // producto
             // 
@@ -361,11 +348,11 @@ namespace VentasEmptyDapper.Views
             this.producto.MinimumWidth = 6;
             this.producto.Name = "producto";
             this.producto.ReadOnly = true;
-            this.producto.Width = 300;
+            this.producto.Width = 125;
             // 
             // precio
             // 
-            this.precio.DataPropertyName = "Precio";
+            this.precio.DataPropertyName = "PrecioUnitario";
             this.precio.HeaderText = "Precio";
             this.precio.MinimumWidth = 6;
             this.precio.Name = "precio";
@@ -385,9 +372,9 @@ namespace VentasEmptyDapper.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dgv_productos);
             this.Controls.Add(this.btn_terminarVenta);
             this.Controls.Add(this.btn_agregarProducto);
-            this.Controls.Add(this.cb_tipoventa);
             this.Controls.Add(this.txt_telefono);
             this.Controls.Add(this.txt_nombreCliente);
             this.Controls.Add(this.txt_precio);
@@ -395,7 +382,6 @@ namespace VentasEmptyDapper.Views
             this.Controls.Add(this.txt_buscarProducto);
             this.Controls.Add(this.txt_dniCliente);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
@@ -410,7 +396,6 @@ namespace VentasEmptyDapper.Views
             this.Controls.Add(this.l_monto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lb_productosVenta);
-            this.Controls.Add(this.dgv_productos);
             this.Name = "VentaAlContadoView";
             this.Size = new System.Drawing.Size(1657, 836);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).EndInit();
@@ -423,7 +408,6 @@ namespace VentasEmptyDapper.Views
 
         private System.Windows.Forms.Button btn_terminarVenta;
         private System.Windows.Forms.Button btn_agregarProducto;
-        private System.Windows.Forms.ComboBox cb_tipoventa;
         private System.Windows.Forms.TextBox txt_telefono;
         private System.Windows.Forms.TextBox txt_nombreCliente;
         private System.Windows.Forms.TextBox txt_precio;
@@ -431,7 +415,6 @@ namespace VentasEmptyDapper.Views
         private System.Windows.Forms.TextBox txt_buscarProducto;
         private System.Windows.Forms.TextBox txt_dniCliente;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
@@ -448,6 +431,7 @@ namespace VentasEmptyDapper.Views
         private System.Windows.Forms.ListBox lb_productosVenta;
         private System.Windows.Forms.DataGridView dgv_productos;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn existencias;
